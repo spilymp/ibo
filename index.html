@@ -1,0 +1,323 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>IBO - Icon Builder for Odoo</title>
+
+    <meta name="author" content="spilymp">
+    <meta name="description" content="An simple Icon Builder for Odoo (IBO), which provide the ability to create app icons in the style of the appicons of the ERP system Odoo.">
+
+    <link rel="stylesheet" type="text/css" href="css/milligram.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <!-- Simple Line Icons -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css"
+        integrity="sha512-QKC1UZ/ZHNgFzVKSAhV5v5j73eeL9EEN289eKAEFaAjgAiobVAnVv/AGuPbXsKl1dNoel3kNr6PYnSiTzVVBCw=="
+        crossorigin="anonymous" />
+
+    <!-- Bootstrap Icons-->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css"
+        as="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+
+    <!-- Remix Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <script type="text/javascript" src="js/ibo_icon.js"></script>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let icon = new IBO_ICON({
+                'font_family': 'bootstrap-icons',
+                'icon_class': 'bi bi-droplet',
+            });
+            icon.draw("icon");
+        });
+
+        function generate() {
+            document.getElementById("icon").innerHTML = '';
+            let icon = new IBO_ICON({
+                'font_color': document.getElementById('iconFontColor').value,
+                'font_family': document.getElementById('iconSet').value,
+                'icon_background': document.getElementById('iconBackgroundColor').value,
+                'icon_class': document.getElementById('iconClass').value,
+                'odoo_version': document.getElementById('odooVersion').value,
+            });
+            icon.draw("icon");
+        }
+
+        function download() {
+            var image = document.getElementsByClassName('ibo-icon-canvas')[0].toDataURL("image/png").replace("image/png", "image/octet-stream");
+            document.getElementById("download").setAttribute("href", image);
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <!-- pre loading the fonts so they are available for the js class -->
+    <div class="font_preload" style="opacity: 0">
+        <span style="font-family: 'Font Awesome 5 Free', Arial, sans-serif;"></span>
+        <span style="font-family: 'bootstrap-icons', Arial, sans-serif;"></span>
+        <span style="font-family: 'simple-line-icons', Arial, sans-serif;"></span>
+        <span style="font-family: 'remixicon', Arial, sans-serif;"></span>
+    </div>
+
+    <header class="container">
+        <div class="row">
+            <div class="column align-center">
+                <h1>IBO - Icon Builder for Odoo</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row row-center">
+            <div class="column align-center">
+                <div class="row">
+                    <div class="column column-center">
+                        <label for="odooVersion">Odoo Version</label>
+                    </div>
+                    <div class="column">
+                        <select id="odooVersion">
+                            <option value="14.0">Odoo 14</option>
+                            <option value="13.0">Odoo 13</option>
+                            <option value="12.0">Odoo 12</option>
+                            <option value="11.0">Odoo 11</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column column-center">
+                        <label for="iconSet">Icon Set</label>
+                    </div>
+                    <div class="column">
+                        <select id="iconSet">
+                            <option value="Font Awesome 5 Free">Font Awesome 5 Free</option>
+                            <option value="bootstrap-icons">Bootstrap Icons</option>
+                            <option value="simple-line-icons">Simple Line Icons</option>
+                            <option value="remixicon">Remix Icon</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column column-center">
+                        <label for="iconClass">Icon Class</label><i id="icon-preview"></i>
+                    </div>
+                    <div class="column">
+                        <input id="iconClass" type="text" placeholder="eg. fas fa-address-card">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column column-center">
+                        <label for="iconFontColor">Icon Font Color</label>
+                    </div>
+                    <div class="column">
+                        <input id="iconFontColor" type="color" onchange="clickColor(0, -1, -1, 5)" value="#ffffff">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column column-center">
+                        <label for="iconBackgroundColor">Icon Background Color</label>
+                    </div>
+                    <div class="column">
+                        <input type="color" onchange="clickColor(0, -1, -1, 5)" value="#9b4dca"
+                            id="iconBackgroundColor">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column">
+
+                    </div>
+                    <div class="column align-center">
+                        <a id="download" download="odoo_icon.png">
+                            <button class="button" type="submit" value="Download" onclick="download()">Download</button>
+                        </a>
+                        <input class="button button-outline" type="submit" value="Generate" onclick="generate()">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="column align-center">
+                <div id="icon"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="column column-100">
+                <h2>Documentation</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <p class="section-description">
+                    The configurator above can be used to quickly and easily create new appicons in the style of the
+                    appicons of the ERP system <a href="https://www.odoo.com/" rel="external nofollow">Odoo</a>.
+
+                    To set an icon you have to find and enter the corresponding css class.
+                    Please check the corresponding page of the icon set for this purpose:
+                <ul>
+                    <li><a href="https://fontawesome.com/icons?d=gallery&p=2&s=brands,solid&m=free">Font Awesome 5
+                            Free</a></li>
+                    <li><a href="https://icons.getbootstrap.com/">Bootstrap Icons</a></li>
+                    <li><a href="https://simplelineicons.github.io/">Simple Line Icons</a></li>
+                    <li><a href="https://remixicon.com/">Remix Icon</a></li>
+                </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column column-100">
+                <h3>Getting Started</h3>
+            </div>
+        </div>
+        <div class="row row-center">
+            <div class="column column-100">
+                <p>
+                    It is also possible to use the class elsewhere and create your own configurator based on it, for
+                    example.
+                    For this purpose, the class offers a few more parameters for individualization in addition to the
+                    options shown above.
+                </p>
+            </div>
+        </div>
+        <div class="row row-center">
+            <div class="column">
+                <p>
+                    The basis of the configurator is a JavaScript class "IBO_ICON", which creates a canvas and "paints"
+                    the icon on it.
+                    If the existing class is used directly by means of a script, additional parameters can be passed.
+                    If this class is instantiated, various parameters can be passed to it (see sample code block on the
+                    right).
+                    If not, default values are used in each case.
+                </p>
+            </div>
+            <div class="column">
+                <pre>
+                        <code>[...]
+let icon = new IBO_ICON({
+    'font_family': 'bootstrap-icons',
+    'icon_class': 'bi bi-droplet',
+});
+[...]</code>
+                </pre>
+            </div>
+        </div>
+
+        <div class="row row-center">
+            <div class="column">
+                <p>
+                    The actual creation then takes place in the "draw" method.
+                    The ID of an HTML element to which the created canvas is attached must be specified here as a
+                    parameter.
+                </p>
+            </div>
+            <div class="column">
+                <pre>
+                        <code>[...]
+icon.draw("icon");
+[...]</code>
+                </pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <h3>Parameter</h3>
+        </div>
+
+        <div class="row">
+            <div class="column column-100">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Values</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>font_color</td>
+                            <td>eg. "#ffffff"</td>
+                            <td>Hex color value for the text or symbol.</td>
+                        </tr>
+                        <tr>
+                            <td>font_family</td>
+                            <td>eg. "Font Awesome 5 Free"</td>
+                            <td>Font family for your text or symbol. Make sure the family is added to your page!</td>
+                        </tr>
+                        <tr>
+                            <td>font_weight</td>
+                            <td>eg. "900"</td>
+                            <td>Font weight for your text or symbol.</td>
+                        </tr>
+                        <tr>
+                            <td>icon_background</td>
+                            <td>eg. "#9b4dca"</td>
+                            <td>Hex color value for the background of your icon.</td>
+                        </tr>
+                        <tr>
+                            <td>icon_class</td>
+                            <td>eg. "fas fa-address-card"</td>
+                            <td>CSS class name of your symbol for the icon, the class will automatically try to finde
+                                the corresponding unicode. If an unicode is set the class will be ignored.</td>
+                        </tr>
+                        <tr>
+                            <td>icon_text</td>
+                            <td>eg. "Test"</td>
+                            <td>The text or symbol which should be displayed on the icon. Will be preferred over the
+                                parameter "icon_class" if set.</td>
+                        </tr>
+                        <tr>
+                            <td>icon_width</td>
+                            <td>eg. "300"</td>
+                            <td>The width of your icon (in px), will also be the height of your icon.</td>
+                        </tr>
+                        <tr>
+                            <td>odoo_version</td>
+                            <td>["11.0", "12.0", "13.0", "14.0"]</td>
+                            <td>The odoo version for which the icon should be generated.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container">
+        <div class="row">
+            <hr />
+        </div>
+        <div class="row">
+            <div class="column">
+                <p>
+                    Created with <i class="fas fa-heart"></i> by <a href="https://github.com/spilymp">spilymp</a>.
+                </p>
+            </div>
+            <div class="column">
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

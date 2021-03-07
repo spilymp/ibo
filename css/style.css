@@ -1,0 +1,36 @@
+body {
+    font-size: 18px;
+}
+
+h1 {
+    margin: 1.5em 0 1.5em 0;
+}
+
+h2 {
+    margin: 2em 0 1em 0;
+}
+
+h3 {
+    margin: 1em 0 0.5em 0;
+}
+
+.button {
+    padding: 0 2.5rem !important;
+}
+
+.align-center {
+    text-align: center;
+}
+
+label {
+    text-align: right;
+}
+
+hr {
+    border: solid 1px #d2d2d2;
+    width : 100%;
+}
+
+footer {
+    font-size: 0.8em;
+}
