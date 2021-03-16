@@ -22,6 +22,10 @@ h3 {
     text-align: center;
 }
 
+.align-right {
+    text-align: right;
+}
+
 label {
     text-align: right;
 }

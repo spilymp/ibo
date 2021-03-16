@@ -1,5 +1,5 @@
 /**
- * Version: 1.0.0
+ * Version: 1.0.1
  * 
  * Copyright (C) 2021 - spilymp (https://github.com/spilymp)
  *
@@ -40,7 +40,11 @@ class IBO_ICON {
             this.font_size = parseInt(this.icon_width) * 0.5;
         }
         if (settings != null && !("icon_text" in settings)) {
-            this.icon_text = this._getUnicode(this.icon_class)
+            let ufw = this._getUnicodeAndFontWeight(this.icon_class);
+            this.icon_text = ufw[0];
+            if (settings != null && !("font_weight" in settings)) {
+                this.font_weight = ufw[1];
+            }
         }
 
         // set other non public settings
@@ -78,7 +82,7 @@ class IBO_ICON {
         this.canvas.width = this.icon_width;
 
         this._ctx = this.canvas.getContext("2d");
-        this._ctx.font = `normal ${this.font_weight} ${this.font_size}px "${this.font_family}"`;
+        this._ctx.font = `${this.font_weight} ${this.font_size}px "${this.font_family}"`;
     }
 
     /**
@@ -126,7 +130,7 @@ class IBO_ICON {
     _setText(text, color, centerX, centerY, font_size) {
         this._ctx.save();
         this._ctx.fillStyle = color;
-        this._ctx.font = `normal ${font_size}px "${this.font_family}"`;
+        this._ctx.font = `${this.font_weight} ${font_size}px "${this.font_family}"`;
         this._ctx.textAlign = "center";
         this._ctx.textBaseline = "middle";
         this._ctx.fillText(`${text}`, centerX, centerY);
@@ -136,7 +140,7 @@ class IBO_ICON {
     /**
      * Shade, blend and convert a color.
      * 
-     * Credit to Pimp Trizkit (https://github.com/PimpTrizkit)
+     * Credit to and Copyright by Pimp Trizkit (https://github.com/PimpTrizkit)
      * Documentation see https://github.com/PimpTrizkit/PJs/wiki/12.-Shade,-Blend-and-Convert-a-Web-Color-(pSBC.js)
      */
     _pSBC(p, c0, c1, l) {
@@ -377,7 +381,7 @@ class IBO_ICON {
      * Helper function to extract the corresponding symbol based on a given class.
      * @param {*} clazzName - The CSS class from which the symbol should be extracted.
      */
-    _getUnicode(clazzName) {
+    _getUnicodeAndFontWeight(clazzName) {
         let tempI = document.createElement('i');
 
         tempI.className = clazzName;
@@ -385,9 +389,11 @@ class IBO_ICON {
 
         //let char = window.getComputedStyle(document.querySelector('.' + clazzName), ':before').getPropertyValue('content').replace(/'|"/g, '');
         let char = window.getComputedStyle(tempI, ':before').content.replace(/'|"/g, '');
-
+        let font_weight = window.getComputedStyle(tempI).getPropertyValue( "font-weight" );
         tempI.remove();
 
-        return char;
+        // Logging for debug purposes
+        // console.log("Unicode: " + char + " # Font-Weight: " + font_weight);
+        return [char, font_weight];
     }
 }

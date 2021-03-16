@@ -67,6 +67,7 @@
     <!-- pre loading the fonts so they are available for the js class -->
     <div class="font_preload" style="opacity: 0">
         <span style="font-family: 'Font Awesome 5 Free', Arial, sans-serif;"></span>
+        <span style="font-family: 'Font Awesome 5 Brands', Arial, sans-serif;"></span>
         <span style="font-family: 'bootstrap-icons', Arial, sans-serif;"></span>
         <span style="font-family: 'simple-line-icons', Arial, sans-serif;"></span>
         <span style="font-family: 'remixicon', Arial, sans-serif;"></span>
@@ -103,7 +104,8 @@
                     </div>
                     <div class="column">
                         <select id="iconSet">
-                            <option value="Font Awesome 5 Free">Font Awesome 5 Free</option>
+                            <option value="Font Awesome 5 Free">Font Awesome 5 Solid</option>
+                            <option value="Font Awesome 5 Brands">Font Awesome 5 Brands</option>
                             <option value="bootstrap-icons">Bootstrap Icons</option>
                             <option value="simple-line-icons">Simple Line Icons</option>
                             <option value="remixicon">Remix Icon</option>
@@ -162,7 +164,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="column column-100">
+            <div class="column">
                 <h2>Documentation</h2>
             </div>
         </div>
@@ -175,8 +177,8 @@
                     To set an icon you have to find and enter the corresponding css class.
                     Please check the corresponding page of the icon set for this purpose:
                 <ul>
-                    <li><a href="https://fontawesome.com/icons?d=gallery&p=2&s=brands,solid&m=free">Font Awesome 5
-                            Free</a></li>
+                    <li><a href="https://fontawesome.com/icons?d=gallery&p=2&s=solid&m=free">Font Awesome 5 Solid</a></li>
+                    <li><a href="https://fontawesome.com/icons?d=gallery&p=2&s=brands&m=free">Font Awesome 5 Brands</a></li>
                     <li><a href="https://icons.getbootstrap.com/">Bootstrap Icons</a></li>
                     <li><a href="https://simplelineicons.github.io/">Simple Line Icons</a></li>
                     <li><a href="https://remixicon.com/">Remix Icon</a></li>
@@ -186,12 +188,12 @@
         </div>
 
         <div class="row">
-            <div class="column column-100">
+            <div class="column">
                 <h3>Getting Started</h3>
             </div>
         </div>
         <div class="row row-center">
-            <div class="column column-100">
+            <div class="column">
                 <p>
                     It is also possible to use the class elsewhere and create your own configurator based on it, for
                     example.
@@ -245,7 +247,7 @@ icon.draw("icon");
         </div>
 
         <div class="row">
-            <div class="column column-100">
+            <div class="column">
 
                 <table>
                     <thead>
@@ -280,7 +282,7 @@ icon.draw("icon");
                             <td>icon_class</td>
                             <td>eg. "fas fa-address-card"</td>
                             <td>CSS class name of your symbol for the icon, the class will automatically try to finde
-                                the corresponding unicode. If an unicode is set the class will be ignored.</td>
+                                the corresponding unicode. If an unicode (parameter "icon_text") is set the class will be ignored.</td>
                         </tr>
                         <tr>
                             <td>icon_text</td>
@@ -309,12 +311,15 @@ icon.draw("icon");
             <hr />
         </div>
         <div class="row">
-            <div class="column">
+            <div class="column column-50">
                 <p>
                     Created with <i class="fas fa-heart"></i> by <a href="https://github.com/spilymp">spilymp</a>.
                 </p>
             </div>
-            <div class="column">
+            <div class="column column-50 align-right">
+                <p>
+                    View Source Code on <a href="https://github.com/spilymp/ibo"><i class="fab fa-github"></i></a>
+                </p>
             </div>
         </div>
     </footer>
