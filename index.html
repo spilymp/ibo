@@ -60,6 +60,26 @@
             document.getElementById("download").setAttribute("href", image);
         }
 
+        function populateIconSetWebsite() {
+            switch (document.getElementById('iconSet').value) {
+                case "Font Awesome 5 Brands":
+                    document.getElementById('iconSetWebsite').href = "https://fontawesome.com/icons?d=gallery&p=2&s=brands&m=free"
+                    break;
+                case "bootstrap-icons":
+                    document.getElementById('iconSetWebsite').href = "https://icons.getbootstrap.com/"
+                    break;
+                case "simple-line-icons":
+                    document.getElementById('iconSetWebsite').href = "https://simplelineicons.github.io/"
+                    break;
+                case "remixicon":
+                    document.getElementById('iconSetWebsite').href = "https://remixicon.com/"
+                    break;
+                default:
+                    document.getElementById('iconSetWebsite').href = "https://fontawesome.com/icons?d=gallery&p=2&s=solid&m=free"
+                    break;
+            }
+        }
+
     </script>
 
 </head>
@@ -100,18 +120,25 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="column column-center">
+                <div class="row icon-set-website">
+                    <div class="column column-center column-50">
                         <label for="iconSet">Icon Set</label>
                     </div>
-                    <div class="column">
-                        <select id="iconSet">
+
+                    <div class="column column-40">
+                        <select id="iconSet" onchange="populateIconSetWebsite()">
                             <option value="Font Awesome 5 Free">Font Awesome 5 Solid</option>
                             <option value="Font Awesome 5 Brands">Font Awesome 5 Brands</option>
                             <option value="bootstrap-icons">Bootstrap Icons</option>
                             <option value="simple-line-icons">Simple Line Icons</option>
                             <option value="remixicon">Remix Icon</option>
                         </select>
+                    </div>
+
+                    <div class="column">
+                        <a href="https://fontawesome.com/icons?d=gallery&p=2&s=brands&m=free" id="iconSetWebsite" class="button button-outline" target="_blank">
+                            <i class="fas fa-globe-europe"></i>
+                        </a>
                     </div>
                 </div>
 

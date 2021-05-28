@@ -38,3 +38,18 @@ hr {
 footer {
     font-size: 0.8em;
 }
+
+.icon-set-website .column:nth-child(2) {
+    padding-right: 0rem;
+}
+
+.icon-set-website .column:nth-child(3) a {
+    padding: 0 !important;
+    width: 100%;
+}
+
+.icon-set-website .column:nth-child(3) a i {
+    padding-bottom: 0.3rem;
+    font-size: 2rem;
+    vertical-align: middle;
+}
