@@ -57,6 +57,7 @@
                 'icon_background': document.getElementById('iconBackgroundColor').value,
                 'icon_class': document.getElementById('iconClass').value,
                 'odoo_version': document.getElementById('odooVersion').value,
+                'font_weight': document.getElementById('fontWeight').value,
             });
             icon.draw("icon");
         }
@@ -164,6 +165,18 @@
                     </div>
                     <div class="column">
                         <input id="iconClass" type="text" placeholder="eg. fas fa-address-card">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column column-center">
+                        <label for="fontWeight">Font Weight</label>
+                    </div>
+                    <div class="column">
+                        <select id="fontWeight">
+                            <option value="900" >Wide</option>
+                            <option value="300" selected >Narrow</option>
+                        </select>
                     </div>
                 </div>
 
