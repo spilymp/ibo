@@ -58,6 +58,7 @@
                 'icon_class': document.getElementById('iconClass').value,
                 'odoo_version': document.getElementById('odooVersion').value,
                 'font_weight': document.getElementById('fontWeight').value,
+                'font_size': document.getElementById('fontSize').value,
             });
             icon.draw("icon");
         }
@@ -177,6 +178,15 @@
                             <option value="900" >Wide</option>
                             <option value="300" selected >Narrow</option>
                         </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column column-center">
+                        <label for="fontWeight">Font Size</label>
+                    </div>
+                    <div class="column">
+                        <input id="fontSize" type="range" min="50" max="300" value="150">
                     </div>
                 </div>
 
