@@ -16,6 +16,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link id="fa4" rel="stylesheet" type="text/css"
+        href="">
 
     <!-- Simple Line Icons -->
     <link rel="stylesheet" type="text/css"
@@ -63,6 +65,16 @@
             document.getElementById("download").setAttribute("href", image);
         }
 
+        function onIconSetUpdate() {
+            populateIconSetWebsite();
+            switch (document.getElementById('iconSet').value) {
+                case "FontAwesome":
+                    document.getElementById("fa4").href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+                    break;
+                default:
+                    document.getElementById("fa4").href = "";
+            }
+        }
         function populateIconSetWebsite() {
             switch (document.getElementById('iconSet').value) {
                 case "Font Awesome 5 Brands":
@@ -119,6 +131,7 @@
                     </div>
                     <div class="column">
                         <select id="odooVersion">
+                            <option value="15.0">Odoo 15</option>
                             <option value="14.0">Odoo 14</option>
                             <option value="13.0">Odoo 13</option>
                             <option value="12.0">Odoo 12</option>
@@ -133,9 +146,10 @@
                     </div>
 
                     <div class="column column-40">
-                        <select id="iconSet" onchange="populateIconSetWebsite()">
+                        <select id="iconSet" onchange="onIconSetUpdate()">
                             <option value="Font Awesome 5 Free">Font Awesome 5 Solid</option>
                             <option value="Font Awesome 5 Brands">Font Awesome 5 Brands</option>
+                            <option value="FontAwesome">Font Awesome 4.7</option>
                             <option value="bootstrap-icons">Bootstrap Icons</option>
                             <option value="simple-line-icons">Simple Line Icons</option>
                             <option value="remixicon">Remix Icon</option>
@@ -155,7 +169,7 @@
                         <label for="iconClass">Icon Class</label><i id="icon-preview"></i>
                     </div>
                     <div class="column">
-                        <input id="iconClass" type="text" placeholder="eg. fas fa-address-card">
+                        <input id="iconClass" type="text" placeholder="e.g. fas fa-address-card">
                     </div>
                 </div>
 
@@ -298,44 +312,44 @@ icon.draw("icon");
                     <tbody>
                         <tr>
                             <td>font_color</td>
-                            <td>eg. "#ffffff"</td>
+                            <td>e.g. "#ffffff"</td>
                             <td>Hex color value for the text or symbol.</td>
                         </tr>
                         <tr>
                             <td>font_family</td>
-                            <td>eg. "Font Awesome 5 Free"</td>
+                            <td>e.g. "Font Awesome 5 Free"</td>
                             <td>Font family for your text or symbol. Make sure the family is added to your page!</td>
                         </tr>
                         <tr>
                             <td>font_weight</td>
-                            <td>eg. "900"</td>
+                            <td>e.g. "900"</td>
                             <td>Font weight for your text or symbol.</td>
                         </tr>
                         <tr>
                             <td>icon_background</td>
-                            <td>eg. "#9b4dca"</td>
+                            <td>e.g. "#9b4dca"</td>
                             <td>Hex color value for the background of your icon.</td>
                         </tr>
                         <tr>
                             <td>icon_class</td>
-                            <td>eg. "fas fa-address-card"</td>
-                            <td>CSS class name of your symbol for the icon, the class will automatically try to finde
+                            <td>e.g. "fas fa-address-card"</td>
+                            <td>CSS class name of your symbol for the icon, the class will automatically try to find
                                 the corresponding unicode. If an unicode (parameter "icon_text") is set the class will be ignored.</td>
                         </tr>
                         <tr>
                             <td>icon_text</td>
-                            <td>eg. "Test"</td>
+                            <td>e.g. "Test"</td>
                             <td>The text or symbol which should be displayed on the icon. Will be preferred over the
                                 parameter "icon_class" if set.</td>
                         </tr>
                         <tr>
                             <td>icon_width</td>
-                            <td>eg. "300"</td>
+                            <td>e.g. "300"</td>
                             <td>The width of your icon (in px), will also be the height of your icon.</td>
                         </tr>
                         <tr>
                             <td>odoo_version</td>
-                            <td>["11.0", "12.0", "13.0", "14.0"]</td>
+                            <td>["11.0", "12.0", "13.0", "14.0", "15.0"]</td>
                             <td>The odoo version for which the icon should be generated.</td>
                         </tr>
                     </tbody>

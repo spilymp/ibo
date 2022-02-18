@@ -100,6 +100,7 @@ class IBO_ICON {
             case "12.0":
             case "13.0":
             case "14.0":
+            case "15.0":
                 this._ctx.moveTo(radius, 0);
                 this._ctx.lineTo(this.icon_width - radius, 0);
                 this._ctx.arcTo(this.icon_width, 0, this.icon_width, radius, radius);
@@ -273,6 +274,7 @@ class IBO_ICON {
             case "12.0":
             case "13.0":
             case "14.0":
+            case "15.0":
                 this._ctx.shadowOffsetX = 0;
                 this._ctx.shadowOffsetY = this.icon_width * 0.02;
                 this._ctx.shadowBlur = 0;
@@ -304,6 +306,7 @@ class IBO_ICON {
             case "12.0":
             case "13.0":
             case "14.0":
+            case "15.0":
                 let is_radius = this.icon_width * 0.047
                 let is_height = this.icon_width * 0.015
 
@@ -357,6 +360,7 @@ class IBO_ICON {
             case "12.0":
             case "13.0":
             case "14.0":
+            case "15.0":
                 this._ctx.save();
                 this._ctx.globalAlpha = 0.2;
                 var gradient = this._ctx.createLinearGradient(
