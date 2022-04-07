@@ -1,5 +1,5 @@
 /**
- * Version: 1.0.1
+ * Version: 1.0.2
  * 
  * Copyright (C) 2021 - spilymp (https://github.com/spilymp)
  *
