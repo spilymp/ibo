@@ -1,12 +1,12 @@
 # IBO - Icon Builder for Odoo
 
 ## Examples
-![Odoo 15 Example Icon "Drop" from Bootstrap](examples\icon_bootstrap.png)
-![Odoo 15 Example Icon "Drop" from Bootstrap](examples\icon_fontawesome.png)
-![Odoo 15 Example Icon "Drop" from Bootstrap](examples\icon_remix.png)
-![Odoo 15 Example Icon "Drop" from Bootstrap](examples\icon_simple.png)
-![Odoo 15 Example Icon "Drop" from Bootstrap](examples\icon_tabler.png)
-![Odoo 15 Example Icon "Drop" from Bootstrap](examples\icon_weather.png)
+![Odoo 15 Example Icon "Sleet Storm" from Weather Icons](https://github.com/spilymp/ibo/blob/main/examples/icon_weather.png)
+![Odoo 15 Example Icon "Drop" from Bootstrap](https://github.com/spilymp/ibo/blob/main/examples/icon_bootstrap.png)
+![Odoo 15 Example Icon "Carrot" from Font Awesome](https://github.com/spilymp/ibo/blob/main/examples/icon_fontawesome.png)
+![Odoo 15 Example Icon "Headset" from Remix](https://github.com/spilymp/ibo/blob/main/examples/icon_remix.png)
+![Odoo 15 Example Icon "Globe" from Simple Icons](https://github.com/spilymp/ibo/blob/main/examples/icon_simple.png)
+![Odoo 15 Example Icon "Bone Off" from Tabler](https://github.com/spilymp/ibo/blob/main/examples/icon_tabler.png)
 
 ## Getting started
 
