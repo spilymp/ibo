@@ -15,7 +15,7 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" type="text/css" 
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -34,7 +34,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
     <!-- Tabler Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@1.41.2/iconfont/tabler-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@1.63.0/iconfont/tabler-icons.min.css">
 
     <!-- Weather Icons-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css" rel="stylesheet">
@@ -71,7 +71,7 @@
         function populateIconSetWebsite() {
             switch (document.getElementById('iconSet').value) {
                 case "Font Awesome 5 Brands":
-                    document.getElementById('iconSetWebsite').href = "https://fontawesome.com/icons?d=gallery&p=2&s=brands&m=free"
+                    document.getElementById('iconSetWebsite').href = "https://fontawesome.com/v5/search?m=free&s=brands"
                     break;
                 case "FontAwesome":
                     document.getElementById('iconSetWebsite').href = "https://fontawesome.com/v4/icons/"
@@ -92,7 +92,7 @@
                     document.getElementById('iconSetWebsite').href = "http://erikflowers.github.io/weather-icons/"
                     break;
                 default:
-                    document.getElementById('iconSetWebsite').href = "https://fontawesome.com/icons?d=gallery&p=2&s=solid&m=free"
+                    document.getElementById('iconSetWebsite').href = "https://fontawesome.com/v5/search?m=free&s=solid%2Cregular"
                     break;
             }
         }
@@ -148,7 +148,7 @@
 
                     <div class="column column-40">
                         <select id="iconSet" onchange="populateIconSetWebsite()">
-                            <option value="Font Awesome 5 Free">Font Awesome 5 Solid</option>
+                            <option value="Font Awesome 5 Free">Font Awesome 5 Solid & Regular</option>
                             <option value="Font Awesome 5 Brands">Font Awesome 5 Brands</option>
                             <option value="FontAwesome">Font Awesome 4.7</option>
                             <option value="bootstrap-icons">Bootstrap Icons</option>
@@ -160,7 +160,7 @@
                     </div>
 
                     <div class="column">
-                        <a href="https://fontawesome.com/icons?d=gallery&p=2&s=solid&m=free" id="iconSetWebsite" class="button button-outline" target="_blank">
+                        <a href="https://fontawesome.com/v5/search?m=free&s=solid%2Cregular" id="iconSetWebsite" class="button button-outline" target="_blank">
                             <i class="fas fa-globe-europe"></i>
                         </a>
                     </div>
@@ -230,8 +230,8 @@
                     To set an icon you have to find and enter the corresponding css class.
                     Please check the corresponding page of the icon set for this purpose:
                 <ul>
-                    <li><a href="https://fontawesome.com/icons?d=gallery&p=2&s=solid&m=free">Font Awesome 5 Solid</a></li>
-                    <li><a href="https://fontawesome.com/icons?d=gallery&p=2&s=brands&m=free">Font Awesome 5 Brands</a></li>
+                    <li><a href="https://fontawesome.com/v5/search?m=free&s=solid%2Cregular">Font Awesome 5 Solid & Regular</a></li>
+                    <li><a href="https://fontawesome.com/v5/search?m=free&s=brands">Font Awesome 5 Brands</a></li>
                     <li><a href="https://fontawesome.com/v4/icons/">Font Awesome 4.7</a></li>
                     <li><a href="https://icons.getbootstrap.com/">Bootstrap Icons</a></li>
                     <li><a href="https://simplelineicons.github.io/">Simple Line Icons</a></li>
@@ -239,6 +239,7 @@
                     <li><a href="https://tabler-icons.io/">Tabler Icons</a></li>
                     <li><a href="http://erikflowers.github.io/weather-icons/">Weather Icons</a></li>
                 </ul>
+                <span><strong>Note:</strong> The icon pack which Odoo uses up to version 15 is Font Awesome 4.7!</span>
                 </p>
             </div>
         </div>
@@ -323,6 +324,11 @@ icon.draw("icon");
                             <td>font_family</td>
                             <td>e.g. "Font Awesome 5 Free"</td>
                             <td>Font family for your text or symbol. Make sure the family is added to your page!</td>
+                        </tr>
+                        <tr>
+                            <td>font_size</td>
+                            <td>e.g. "40"</td>
+                            <td>Font size for your text or symbol.</td>
                         </tr>
                         <tr>
                             <td>font_weight</td>
