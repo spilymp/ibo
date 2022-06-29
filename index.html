@@ -72,27 +72,35 @@
             switch (document.getElementById('iconSet').value) {
                 case "Font Awesome 5 Brands":
                     document.getElementById('iconSetWebsite').href = "https://fontawesome.com/v5/search?m=free&s=brands"
+                    document.getElementById('iconClass').placeholder = "e.g. fab fa-github"
                     break;
                 case "FontAwesome":
                     document.getElementById('iconSetWebsite').href = "https://fontawesome.com/v4/icons/"
+                    document.getElementById('iconClass').placeholder = "e.g. fa fa-bath"
                     break;
                 case "bootstrap-icons":
                     document.getElementById('iconSetWebsite').href = "https://icons.getbootstrap.com/"
+                    document.getElementById('iconClass').placeholder = "e.g. bi bi-droplet"
                     break;
                 case "simple-line-icons":
                     document.getElementById('iconSetWebsite').href = "https://simplelineicons.github.io/"
+                    document.getElementById('iconClass').placeholder = "e.g. icon-globe-alt"
                     break;
                 case "remixicon":
                     document.getElementById('iconSetWebsite').href = "https://remixicon.com/"
+                    document.getElementById('iconClass').placeholder = "e.g. ri-customer-service-line"
                     break;
                 case "tabler-icons":
                     document.getElementById('iconSetWebsite').href = "https://tabler-icons.io/"
+                    document.getElementById('iconClass').placeholder = "e.g. ti ti-bone-off"
                     break;
                 case "weathericons":
                     document.getElementById('iconSetWebsite').href = "http://erikflowers.github.io/weather-icons/"
+                    document.getElementById('iconClass').placeholder = "e.g. wi-day-sleet-storm"
                     break;
                 default:
                     document.getElementById('iconSetWebsite').href = "https://fontawesome.com/v5/search?m=free&s=solid%2Cregular"
+                    document.getElementById('iconClass').placeholder = "e.g. fas fa-carrot"
                     break;
             }
         }
