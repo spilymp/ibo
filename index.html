@@ -56,6 +56,7 @@
                 'font_color': document.getElementById('iconFontColor').value,
                 'font_family': document.getElementById('iconSet').value,
                 'font_size': document.getElementById('iconFontSizeValue').value,
+                'font_weight': document.getElementById('fontWeight').value,
                 'icon_background': document.getElementById('iconBackgroundColor').value,
                 'icon_class': document.getElementById('iconClass').value,
                 'icon_width': document.getElementById('iconSizeValue').value,
@@ -238,7 +239,7 @@
                 <div class="row">
 
                     <div class="column column-center">
-                        <label for="iconSize">Icon Font Size</label>
+                        <label for="iconSize">Icon Size</label>
                     </div>
                     <div class="column">
                         <div class="row" id="iconSize">
@@ -269,10 +270,15 @@
                     </div>
                 </div>
 
-                <!-- placeholder -->
                 <div class="row">
+                    <div class="column column-center">
+                        <label for="fontWeight">Icon Font Weight</label>
+                    </div>
                     <div class="column">
-                        <input type="text" class="visibility-hidden">
+                        <select id="fontWeight">
+                            <option value="900" selected>Normal</option>
+                            <option value="300">Light</option>
+                        </select>
                     </div>
                 </div>
 
