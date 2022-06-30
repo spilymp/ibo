@@ -26,18 +26,34 @@ h3 {
     text-align: right;
 }
 
+.align-left {
+    text-align: left;
+}
+
 label {
     text-align: right;
 }
 
 hr {
     border: solid 1px #d2d2d2;
-    width : 100%;
+    width: 100%;
 }
 
 footer {
     font-size: 0.8em;
 }
+
+.icon {
+    max-width: 300px;
+}
+
+.visibility-hidden {
+    visibility: hidden;
+}
+
+/**
+ * Special classes for the button to open icon websites.
+ */
 
 .icon-set-website .column:nth-child(2) {
     padding-right: 0rem;
@@ -48,8 +64,15 @@ footer {
     width: 100%;
 }
 
-.icon-set-website .column:nth-child(3) a i {
-    padding-bottom: 0.3rem;
+.button-icon {
+    padding-bottom: 0.4rem;
     font-size: 2rem;
     vertical-align: middle;
+}
+
+/**
+ * Special classe to toggle the settings.
+ */
+.settings-card.deactivated {
+    display: none;
 }
