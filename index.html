@@ -26,17 +26,17 @@
         crossorigin="anonymous" />
 
     <!-- Bootstrap Icons-->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" as="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" as="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" type="text/css">
 
     <!-- Remix Icons-->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" type="text/css">
 
     <!-- Tabler Icons -->
-    <link rel="stylesheet" href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" type="text/css">
 
     <!-- Weather Icons-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css" type="text/css">
 
     <script type="text/javascript" src="js/ibo_icon.js"></script>
 
@@ -79,7 +79,7 @@
         function populateIconSetWebsite() {
             switch (document.getElementById('iconSet').value) {
                 case "Font Awesome 5 Brands":
-                    document.getElementById('iconSetWebsite').href = "https://fontawesome.com/v5/search?m=free&s=brands"
+                    document.getElementById('iconSetWebsite').href = "https://fontawesome.com/v5/search?o=r&m=free&f=brands"
                     document.getElementById('iconClass').placeholder = "e.g. fab fa-github"
                     break;
                 case "FontAwesome":
